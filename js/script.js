@@ -48,21 +48,28 @@ const ticket = document.getElementById('ticket');
 
 // 2 -
 
-const price = inputKm.value * 0.21;
+let price = inputKm.value * 0.21;
 console.log('Prezzo senza  sconto €: ', price);
+
+
 
 let hasDiscount = false
 
-if (document.getElementById('age-selection').options.item(1)) {
-    hasDiscount = true
-    let finalPrice = price - (price * 0.20);
-    console.log('Prezzo scontato €: ', finalPrice);
-}
 
-if (document.getElementById('age-selection').options.item(2)) {
+const minorAge = document.getElementById('age-selection').options.item(1).text;
+console.log(minorAge);
+const majorAge = document.getElementById('age-selection').options.item(2).text;
+console.log(majorAge);
+
+if (minorAge.text) {
     hasDiscount = true
-    let finalPrice = price - (price * 0.4)
-    console.log('prezzo scontato €: ' + finalPrice);
+    price *= 0.8;
+    console.log('Prezzo scontato minorenni (€): ', price);
+} else if (majorAge.text) {
+    hasDiscount = true;
+    price *= 0.6;
+    console.log('prezzo scontato over 65 (€): ' + price);
+
 }
 
 
@@ -78,12 +85,13 @@ if (document.getElementById('age-selection').options.item(2)) {
 proceedButton.addEventListener('click', function () {
 
 
-
-
     const userName = inputName.value;
     const userKm = inputKm.value;
     const userAge = inputAge.value;
     ticket.innerText = userName + ' ' + userKm + '(km) ' + userAge + ' ' + price + '€';
 
 })
+
+
+
 
