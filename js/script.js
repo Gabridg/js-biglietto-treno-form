@@ -22,14 +22,6 @@ funzionare il form e stampare correttamente i dati del biglietto!
 
 */
 
-/*
-
-1- recuperare gli input/bottoni
-2- calcolare la distanza in km (*0.21)
-3- calcolare il prezzo in base agli sconti
-4-
-5-
-*/
 
 // 1 -
 //form creazione biglietto
@@ -43,6 +35,7 @@ const backButton = document.getElementById('back')
 const passengerName = document.getElementById('passenger-name');
 const priceStamp = document.getElementById('prezzo');
 const discount = document.getElementById('sconto');
+const ticket = document.getElementById('ticket');
 
 
 // 2
@@ -52,13 +45,25 @@ nextButton.addEventListener('click', function () {
     const ageValue = inputAge.value;
     console.log(nameValue, kmValue, ageValue);
 
+    let discountName = 'Prezzo Base'
     let price = kmValue * 0.21;
     console.log('prezzo base € :' + price);
 
     if (ageValue === 'min') {
-        price *= 0.8
+        price *= 0.8;
+        discountName = 'Prezzo Scontato 20%';
     } else if (ageValue === 'over-65') {
         price *= 0.6
+        discountName = 'Prezzo Scontato 40%';
     }
     console.log('prezzo socntato € :' + price);
+
+
+    passengerName.innerText = nameValue;
+    priceStamp.innerText = '€ ' + price.toFixed(2);
+    discount.innerText = discountName;
+
+    ticket.className = 'd-block';
 })
+
+
