@@ -32,33 +32,6 @@ funzionare il form e stampare correttamente i dati del biglietto!
 */
 
 // 1 -
-const proceedButton = document.getElementById('proceed');
-const backButton = document.getElementById('back')
-console.log('button proceed: ', proceedButton);
-console.log('button back', backButton);
-
-const inputName = document.getElementById('name');
-const inputKm = document.getElementById('distance');
-const inputAge = document.getElementById('age-selection');
-console.log('nome e cognome: ', inputName.value);
-console.log('distanza da percorrere: ', inputKm.value);
-console.log('età utente: ', inputAge.value);
-
-const ticket = document.getElementById('ticket');
-
-const normalAge = document.getElementById('age-selection').item(0).value;
-console.log(normalAge);
-const minorAge = document.getElementById('age-selection').item(1).value;
-console.log(minorAge);
-const majorAge = document.getElementById('age-selection').item(2).value;
-console.log(majorAge);
-// 2 -
-
-let price = inputKm.value * 0.21;
-console.log('Prezzo senza  sconto €: ', price);
-
-
-
 
 
 
