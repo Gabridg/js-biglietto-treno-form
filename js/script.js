@@ -66,4 +66,10 @@ nextButton.addEventListener('click', function () {
     ticket.className = 'd-block';
 })
 
+backButton.addEventListener('click', function () {
+    inputName.value = '';
+    inputKm.value = '1';
+    inputAge.value = '';
+})
+
 
