@@ -32,7 +32,33 @@ funzionare il form e stampare correttamente i dati del biglietto!
 */
 
 // 1 -
+//form creazione biglietto
+const inputName = document.getElementById('name');
+const inputKm = document.getElementById('distance');
+const inputAge = document.getElementById('age-selection');
+const nextButton = document.getElementById('proceed');
+const backButton = document.getElementById('back')
+
+//form biglietto creato
+const passengerName = document.getElementById('passenger-name');
+const priceStamp = document.getElementById('prezzo');
+const discount = document.getElementById('sconto');
 
 
+// 2
+nextButton.addEventListener('click', function () {
+    const nameValue = inputName.value;
+    const kmValue = inputKm.value;
+    const ageValue = inputAge.value;
+    console.log(nameValue, kmValue, ageValue);
 
+    let price = kmValue * 0.21;
+    console.log('prezzo base € :' + price);
 
+    if (ageValue === 'min') {
+        price *= 0.8
+    } else if (ageValue === 'over-65') {
+        price *= 0.6
+    }
+    console.log('prezzo socntato € :' + price);
+})
