@@ -16,22 +16,46 @@
 
 <body>
 
+    <div class="container">
+        <h1 class="text-white text-center fw-bold">Informazioni Utente per il biglietto</h1>
+        <div id="train" class="my-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row row-cols-3 align-items-center">
+                        <div class="mb-2">
+                            <label for="name" class="form-label">Nome Cognome</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="mb-2">
+                            <label for="distance" class="">Distanza viaggio (km)</label>
+                            <input type="number" min="1" max="1000" id="distance">
+                        </div>
+                        <div class="mb-3">
+                            <label for="age-selection" class="d-block">Fascia d'età:</label>
+                            <select name="" id="age-selection">
+                                <option value="mag">Maggiorenne</option>
+                                <option value="min">Minorenne</option>
+                                <option value="over-65">Over 65</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-center">
+                <button id="proceed" class="btn btn-success fw-bold me-3">Avanti</button>
+                <button id="back" class="btn btn-danger fw-bold">Annulla</button>
+            </div>
 
-    <div id="train">
-
-        <input type="text" value="" placeholder="Nome Cognome" id="name">
-        <input type="text" value="" placeholder="Numero Km" id="distance">
-        <form action="">
-            <select name="" id="age-selection">
-                <option value="Maggiorenne">Maggiorenne</option>
-                <option value="Minorenne">Minorenne</option>
-                <option value="Over-65">Over 65</option>
-            </select>
-        </form>
-        <button id="proceed">Procedi</button>
-        <button id="back">Torna in dietro</button>
+        </div>
+        <h1 class="text-white text-center fw-bold">Il tuo biglietto</h1>
+        <div id="ticket" class="">
+            <div class="card">
+                <div class="card-title"></div>
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="ticket"></div>
 
     <script src="js/script.js"></script>
 </body>
